@@ -1,0 +1,12 @@
+.mat-component {
+  background-color: #eee;
+  border: 1px solid #ccc;
+}
+
+.mat-short {
+  height: 100px;
+}
+
+.mat-tall {
+  height: 450px;
+}
