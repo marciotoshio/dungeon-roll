@@ -4,3 +4,9 @@ export const selectHero = hero => {
     hero: hero
   }
 }
+
+export const reset = () => {
+  return {
+    type: 'RESET'
+  }
+}
