@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
 import { connect } from 'react-redux'
 import '../assets/hero_select.css';
 import heroList from '../models/hero';
-import { selectHero } from '../actions'
+import { selectHero } from '../reducers/app'
 
 class HeroSelect extends Component {
 
@@ -23,7 +24,13 @@ class HeroSelect extends Component {
     return (
       <ul className="hero-select">
         {this.heroes.map((hero, index) => (
-          <li key={index}><button onClick={() => this.handleSelectHero(hero)}>{hero.full_name()}</button></li>
+          <li key={index}>
+            <RaisedButton
+              label={hero.full_name()}
+              primary={true}
+              onClick={() => this.handleSelectHero(hero)}
+            />
+          </li>
         ))}
       </ul>
     );

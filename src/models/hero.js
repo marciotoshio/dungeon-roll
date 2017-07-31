@@ -1,6 +1,7 @@
 class Hero {
   constructor(level = 0) {
     this.level = level;
+    this.in_dungeon = false;
   }
 
   name() {

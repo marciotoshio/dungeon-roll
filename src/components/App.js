@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import { connect } from 'react-redux'
 import '../assets/app.css';
 import HeroSelect from './HeroSelect';
 import Mat from './Mat';
-import { reset } from '../actions'
+import { reset } from '../reducers/app'
+
+injectTapEventPlugin();
 
 class App extends Component {
 
@@ -22,11 +26,13 @@ class App extends Component {
     return (
       <div className="app">
         <div className="app-header">
-          <h2>Welcome to Dungeon Roll</h2>
+          <h2>Dungeon Roll</h2>
         </div>
         <HeroSelect />
         <Mat />
-        <button onClick={() => this.handleReset()}>Reset</button>
+        <div className="app-footer">
+          <RaisedButton label="Novo jogo!" secondary={true} onClick={() => this.handleReset()} />
+        </div>
       </div>
     );
   }
